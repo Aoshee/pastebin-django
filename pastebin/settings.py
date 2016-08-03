@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'correct horse battery staple'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [".pastesite.matoking.com"]
+#ALLOWED_HOSTS = [".pastesite.matoking.com"]
 
 # Limits
 # Limit the amount of paste submissions, edits, etc. unregistered guests and registered users
@@ -159,26 +159,26 @@ DATABASES = {
 }
 
 # Cache
-CACHES = {
+#CACHES = {
     # 'default' is a Redis server working as a LRU cache (non-persistent)
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
-        },
-        "TIMEOUT": 15, # Use a relatively short timeout since a lot of things on the site
+    #"default": {
+    #    "BACKEND": "django_redis.cache.RedisCache",
+    #    "LOCATION": "redis://127.0.0.1:6379/1",
+    #    "OPTIONS": {
+    #        "CLIENT_CLASS": "django_redis.client.DefaultClient"
+    #    },
+    #    "TIMEOUT": 15, # Use a relatively short timeout since a lot of things on the site
                        # can change regularly
-    },
+    #},
     # 'persistent' is a Redis server working as a persistent storage
-    "persistent": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6380/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
-        }
-    }
-}
+#    "persistent": {
+ #       "BACKEND": "django_redis.cache.RedisCache",
+  #      "LOCATION": "redis://127.0.0.1:6380/1",
+   #     "OPTIONS": {
+    #        "CLIENT_CLASS": "django_redis.client.DefaultClient"
+     #   }
+    #}
+#}
 
 # Use Redis as a session cache
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
